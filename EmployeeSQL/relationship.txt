@@ -11,7 +11,7 @@ title VARCHAR(50)
 employees 
 --
 emp_no INTEGER PK
-emp_title_id INTEGER FK >- titles.title_id
+emp_title_id VARCHAR(30) FK >- titles.title_id
 birth_date VARCHAR(20)
 first_name VARCHAR(50)
 last_name VARCHAR(50)
@@ -20,8 +20,9 @@ hire_date VARCHAR(15)
  
 dept_manager
 --
-emp_no INTEGER FK >- employees.emp_no 
 dept_no VARCHAR(5) FK >- departments.dept_no
+emp_no INTEGER FK >- employees.emp_no 
+
 
 
 salaries
