@@ -2,38 +2,38 @@
 -- NOTE! If you have used non-SQL datatypes in your design, you will have to change these here.
 
 
-CREATE TABLE "employees" (
-    "emp_no" INTEGER   NOT NULL,
-    "emp_title_id" INTEGER   NOT NULL,
-    "birth_date" VARCHAR   NOT NULL,
-    "first_name" VARCHAR   NOT NULL,
-    "last_name" VARCHAR   NOT NULL,
-    "sex" VARCHAR   NOT NULL,
-    "hire_date" VARCHAR   NOT NULL,
-    CONSTRAINT "pk_employees" PRIMARY KEY (
-        "emp_no"
-     )
-);
-
 CREATE TABLE "departments" (
-    "dept_no" VARCHAR   NOT NULL,
-    "dept_name" VARCHAR   NOT NULL,
+    "dept_no" VARCHAR(5)   NOT NULL,
+    "dept_name" VARCHAR(30)   NOT NULL,
     CONSTRAINT "pk_departments" PRIMARY KEY (
         "dept_no"
      )
 );
 
 CREATE TABLE "titles" (
-    "title_id" VARCHAR   NOT NULL,
-    "title" VARCHAR   NOT NULL,
+    "title_id" VARCHAR(30)   NOT NULL,
+    "title" VARCHAR(50)   NOT NULL,
     CONSTRAINT "pk_titles" PRIMARY KEY (
         "title_id"
      )
 );
 
+CREATE TABLE "employees" (
+    "emp_no" INTEGER   NOT NULL,
+    "emp_title_id" INTEGER   NOT NULL,
+    "birth_date" VARCHAR(20)   NOT NULL,
+    "first_name" VARCHAR(50)   NOT NULL,
+    "last_name" VARCHAR(50)   NOT NULL,
+    "sex" CHAR(1)   NOT NULL,
+    "hire_date" VARCHAR(15)   NOT NULL,
+    CONSTRAINT "pk_employees" PRIMARY KEY (
+        "emp_no"
+     )
+);
+
 CREATE TABLE "dept_manager" (
     "emp_no" INTEGER   NOT NULL,
-    "dept_no" VARCHAR   NOT NULL
+    "dept_no" VARCHAR(5)   NOT NULL
 );
 
 CREATE TABLE "salaries" (
@@ -43,7 +43,7 @@ CREATE TABLE "salaries" (
 
 CREATE TABLE "dept_emp" (
     "emp_no" INTEGER   NOT NULL,
-    "dept_no" VARCHAR   NOT NULL
+    "dept_no" VARCHAR(5)   NOT NULL
 );
 
 ALTER TABLE "employees" ADD CONSTRAINT "fk_employees_emp_title_id" FOREIGN KEY("emp_title_id")
