@@ -12,11 +12,11 @@ employees
 --
 emp_no INTEGER PK
 emp_title_id VARCHAR(30) FK >- titles.title_id
-birth_date VARCHAR(20)
+birth_date DATE
 first_name VARCHAR(50)
 last_name VARCHAR(50)
 sex CHAR(1)
-hire_date VARCHAR(15)
+hire_date DATE
  
 dept_manager
 --
